@@ -1,3 +1,5 @@
+var total = 0;
+
 $(document).ready(function () {
     init()
 });
@@ -11,7 +13,7 @@ function enable() {
     $("#btnSubmit").on("click", postEmployee);
     $("#btnSearch").on("click", searchEmployee);
     $("#btnSearch2").on("click", searchEmployeePosition);
-    // $("#list").on("click", searchEmployeeSalary);
+    // $("#list").on("click", );
 }
 
 function getEmployees() {
@@ -36,6 +38,8 @@ function postEmployee(event) {
 
     };
 
+    total += parseFloat(newEmployee.salary);
+
     $.ajax({
         type: "POST",
         contentType: "application/json; charset=utf-8",
@@ -47,19 +51,18 @@ function postEmployee(event) {
         }
     });
 
-    $.ajax({
-        type: "GET",
-        url: "/get3/" + newEmployee.salary,
-        success: function (data) {
-            appendPeople(data);
-        }
-    });
-
     $("#txtId").val("");
     $("#txtFName").val("");
     $("#txtLName").val("");
     $("#txtSalary").val("");
     $("#txtPosition").val("");
+
+    $("#totalSalary").text("Total Salary: $" + total);
+
+    $("#month").text("Total Monthly: $" + total/12);
+    $("#twiceM").text("Total twice a month: $" + total/24);
+    $("#twiceW").text("Total Biweekly: $" + total/26);
+
 
 }
 

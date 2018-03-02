@@ -59,6 +59,10 @@ function postEmployee(event) {
 
     $("#totalSalary").text("Total Salary: $" + total);
 
+    $("#month").text("Total Monthly: $" + total/12);
+    $("#twiceM").text("Total twice a month: $" + total/24);
+    $("#twiceW").text("Total Biweekly: $" + total/26);
+
 
 }
 
