@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Employee Calculator</title>
+
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
+    <script type="text/javascript" th:src="@{/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/client.js}"></script>
+
+</head>
+<body>
+    <h1>Employee Calculator</h1>
+    <button id="list">See Everyone</button>
+
+    <!--<p th:text="'Total Salary: $' + ${whatever.total}" class="solution"></p>-->
+    <form>
+        <input id="txtId" type="text" placeholder="Enter Id"/>
+        <input id="txtFName" type="text" placeholder="Enter First Name"/>
+        <input id="txtLName" type="text" placeholder="Enter Last Name"/>
+        <input id="txtSalary" type="text" placeholder="Enter Salary"/>
+        <input id="txtPosition" type="text" placeholder="Enter Position"/>
+        <button id="btnSubmit">Submit Employee</button>
+    </form>
+    <p></p>
+    <form>
+        <input id="txtSearch" type="text" placeholder="Enter ID to Search"/>
+        <button id="btnSearch">Search for Employee</button>
+    </form>
+    <p></p>
+    <form>
+        <input id="txtSearch2" type="text" placeholder="Search Position"/>
+        <button id="btnSearch2">Search for Position</button>
+    </form>
+    <div id="container"></div>
+</body>
+</html>
