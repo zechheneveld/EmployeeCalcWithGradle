@@ -13,7 +13,7 @@ function enable() {
     $("#btnSubmit").on("click", postEmployee);
     $("#btnSearch").on("click", searchEmployee);
     $("#btnSearch2").on("click", searchEmployeePosition);
-    // $("#list").on("click", );
+    $("#list").on("click", getEmployees);
 }
 
 function getEmployees() {

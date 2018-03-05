@@ -19,13 +19,15 @@ public class EmployeeRepository {
         employeeList.add(employee);
     }
 
-//    public Employee findEmployeeById(String id){
+//    public List<Employee> findEmployeeById(String id){
+//        List<Employee> foundEmployees = new ArrayList<>();
 //        for(Employee kittyFoo : employeeList){
 //            if (kittyFoo.getId().equalsIgnoreCase(id)){
-//                return kittyFoo;
+//                foundEmployees.add(kittyFoo);
+//                return foundEmployees;
 //            }
 //        }
-//        return null;
+//        return foundEmployees;
     public List<Employee> findEmployeeById(String id) {
 
         List<Employee> employeeId = new ArrayList<>();
