@@ -19,26 +19,36 @@ public class EmployeeRepository {
         employeeList.add(employee);
     }
 
-    public Employee findEmployeeById(String id){
-        for(Employee kittyFoo : employeeList){
-            if (kittyFoo.getId().equalsIgnoreCase(id)){
-                return kittyFoo;
+//    public Employee findEmployeeById(String id){
+//        for(Employee kittyFoo : employeeList){
+//            if (kittyFoo.getId().equalsIgnoreCase(id)){
+//                return kittyFoo;
+//            }
+//        }
+//        return null;
+    public List<Employee> findEmployeeById(String id) {
+
+        List<Employee> employeeId = new ArrayList<>();
+
+        for (Employee kittyFoo : employeeList) {
+            if (kittyFoo.getId().equalsIgnoreCase(id)) {
+                employeeId.add(kittyFoo);
             }
         }
-        return null;
+        return employeeId;
     }
 
-    public Employee findEmployeeByPosition(String position){
+    public List<Employee> findEmployeeByPosition(String position){
 
-        //Create a List
-        //In the loop, add to the list
-        //Return the list
+        List<Employee> employeePosition = new ArrayList<>();
 
         for(Employee kittyPoo : employeeList){
-            if (kittyPoo.getPosition().equalsIgnoreCase(position)){
-                return kittyPoo;
+            if(kittyPoo.getPosition().equalsIgnoreCase(position)){
+                employeePosition.add(kittyPoo);
             }
         }
-        return null;
+
+        return employeePosition;
+
     }
 }

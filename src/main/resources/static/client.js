@@ -106,6 +106,8 @@ function appendPeople(peopleArray) {
         var el = $("#container").children().last();
         el.append("<p>" + person.id + " : " +
             person.firstName + " " +
-            person.lastName + "</p>");
+            person.lastName + "'s position is " +
+            person.position + "</p>");
+
     }
 }

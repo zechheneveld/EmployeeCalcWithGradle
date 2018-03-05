@@ -38,6 +38,11 @@ function postEmployee(event) {
 
     };
 
+    // if (newEmployee.id.equals("")){
+    //     // $("#txtId").val("Please enter an ID");
+    //     id = null;
+    // }
+
     total += parseFloat(newEmployee.salary);
 
     $.ajax({
@@ -99,6 +104,12 @@ function searchEmployeePosition(event) {
 
 function appendPeople(peopleArray) {
     $("#container").empty();
+
+    if(peopleArray.length == 0){
+        var el = $("#container").children().last();
+        el.append("<span>No Employee Found</span>");
+    }
+
     for (var i = 0; i < peopleArray.length; i++){
         var person = peopleArray[i];
 
@@ -106,6 +117,8 @@ function appendPeople(peopleArray) {
         var el = $("#container").children().last();
         el.append("<p>" + person.id + " : " +
             person.firstName + " " +
-            person.lastName + "</p>");
+            person.lastName + "'s position is " +
+            person.position + "</p>");
+
     }
 }

@@ -24,26 +24,34 @@ public class BaseController {
 
     @RequestMapping("/get/{id}")
     public @ResponseBody List<Employee> findEmployeeById(@PathVariable String id){
-        Employee foundEmployee = employeeRepository.findEmployeeById(id);
+//        Employee foundEmployee = employeeRepository.findEmployeeById(id);
+//
+//        List<Employee> responseArray = new ArrayList<>();
+//        responseArray.add(foundEmployee);
+//
+//        return responseArray;
 
-        List<Employee> responseArray = new ArrayList<>();
-        responseArray.add(foundEmployee);
-
-        return responseArray;
+        return employeeRepository.findEmployeeById(id);
     }
 
     @RequestMapping("/get2/{position}")
     public @ResponseBody List<Employee> findEmployeeByPosition(@PathVariable String position){
-        Employee foundEmployeePosition = employeeRepository.findEmployeeByPosition(position);
 
-        List<Employee> responseArray = new ArrayList<>();
-        responseArray.add(foundEmployeePosition);
-
-        return responseArray;
+        return employeeRepository.findEmployeeByPosition(position);
     }
 
     @RequestMapping(value = "/add/employee", method = RequestMethod.POST)
     public @ResponseBody Employee postEmployee(@RequestBody Map<String, Object> payload){
+
+//        return employeeRepository.addEmployee({
+//                String.valueOf(payload.get("id")),
+//                String.valueOf(payload.get("firstName")),
+//                String.valueOf(payload.get("lastName")),
+//                String.valueOf(payload.get("salary")),
+//                String.valueOf(payload.get("position"))
+//
+//        });
+
         String newId = String.valueOf(payload.get("id"));
         String newFName = String.valueOf(payload.get("firstName"));
         String newLName = String.valueOf(payload.get("lastName"));
